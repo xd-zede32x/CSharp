@@ -7,6 +7,8 @@ namespace RomanSharp
         private static void Main(string[] args)
         {
             Console.Title = "Калькулятор";
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Доступные операции: (-) || (+) || (/) || (*)");
 
             Console.Write("Выберете операцию над числами: ");
@@ -42,6 +44,7 @@ namespace RomanSharp
 
             Operation(operationNumberOne, operationNumberTwo, userOperation);
 
+            Console.ResetColor();
             Console.ReadKey();
         }
 
@@ -69,7 +72,6 @@ namespace RomanSharp
 
                 default:
                     result = 0;
-                    Console.WriteLine("Не распознанная операция");
                     break;
             }
 
