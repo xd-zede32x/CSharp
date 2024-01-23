@@ -4,9 +4,6 @@ namespace RomanSharp
 {
     public class Program
     {
-        private static int _firstNumber = 0;
-        private static int _secondNumber = 0;
-
         private static void Main(string[] args)
         {
             Console.Title = "Калькулятор";
@@ -21,19 +18,19 @@ namespace RomanSharp
             string firstNumber = Console.ReadLine();
 
             if (int.TryParse(firstNumber, out int operationNumberOne))
-                _firstNumber = operationNumberOne;
+                firstNumber = operationNumberOne.ToString();
 
             else
             {
                 Console.WriteLine("Введена неверная строка. Повторите попытку");
                 return;
             }
-            
+
             Console.Write("Введите второе число: ");
             string secondNumber = Console.ReadLine();
 
             if (int.TryParse(secondNumber, out int operationNumberTwo))
-                _secondNumber = operationNumberTwo;
+                secondNumber = operationNumberTwo.ToString();
 
             else
             {
@@ -43,7 +40,7 @@ namespace RomanSharp
 
             Console.Clear();
 
-            Operation(_firstNumber, _secondNumber, userOperation);
+            Operation(operationNumberOne, operationNumberTwo, userOperation);
 
             Console.ReadKey();
         }
