@@ -41,18 +41,17 @@ namespace RomanSharp
                 return;
             }
 
-            int result = 0;
-
-            result = Operation(_firstNumber, _secondNumber, result, userOperation);
-
             Console.Clear();
 
-            Console.WriteLine($"Ваш ответ: {result}");
+            Operation(_firstNumber, _secondNumber, userOperation);
+
             Console.ReadKey();
         }
 
-        private static int Operation(int firstNumber, int secondNumber, int result, string symbol)
+        private static int Operation(int firstNumber, int secondNumber, string symbol)
         {
+            int result;
+
             switch (symbol)
             {
                 case "+":
@@ -72,10 +71,12 @@ namespace RomanSharp
                     break;
 
                 default:
+                    result = 0;
                     Console.WriteLine("Не распознанная операция");
                     break;
             }
 
+            Console.WriteLine($"Ваш ответ: {result}");
             return result;
         }
     }
